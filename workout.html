@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -145,7 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">김광석, 유재하 리메이크 앨범 가사 비교</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">김광석, 유재하 리메이크 앨범 가사 비교</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -163,8 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="패키지" class="level1">
 <h1>패키지</h1>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tidyverse"</span>, <span class="co"># 어지러웠던 R세상을 깔끔하게 정돈. </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># "dplyr",     # tidyverse 부착. 공구상자</span></span>
@@ -181,7 +179,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pkg, <span class="cf">function</span>(x){</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(x, <span class="at">ch =</span> T)) <span class="fu">install.packages</span>(x, <span class="at">dependencies =</span> T)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: tidyverse</code></pre>
 </div>
@@ -272,10 +269,7 @@ NULL
 $gt
 NULL</code></pre>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pkg, require, <span class="at">ch =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>tidyverse tidytable     rvest   janitor  tidytext RcppMeCab    tidylo        gt 
      TRUE      TRUE      TRUE      TRUE      TRUE      TRUE      TRUE      TRUE </code></pre>
@@ -284,11 +278,8 @@ NULL</code></pre>
 <section id="맥북-호환-실행" class="level2">
 <h2 class="anchored" data-anchor-id="맥북-호환-실행">(맥북 호환) 실행</h2>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">family=</span><span class="st">"AppleGothic"</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_gray</span>(<span class="at">base_family=</span><span class="st">'AppleGothic'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
 </section>
@@ -299,57 +290,43 @@ NULL</code></pre>
 <p>김광석 리메이크 앨범 kim</p>
 <p>유재하 리메이크 앨범 you</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "data"               "kim.txt"            "knu_dic.rds"       
- [4] "knusenti.zip"       "KnuSentiLex-master" "tm_w12.Rproj"      
- [7] "workout_files"      "workout.html"       "workout.qmd"       
-[10] "workout.rmarkdown"  "you.txt"           </code></pre>
+<pre><code> [1] "data"               "git_tm.Rproj"       "kim.txt"           
+ [4] "knu_dic.rds"        "knusenti.zip"       "KnuSentiLex-master"
+ [7] "README.md"          "tm_w12.Rproj"       "workout_files"     
+[10] "workout.html"       "workout.qmd"        "workout.rmarkdown" 
+[13] "you.txt"           </code></pre>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 김광석 리메이크 앨범 / kim</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 유재하 리메이크 앨범 / you </span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>kim <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"kim.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in readLines("kim.txt"): incomplete final line found on 'kim.txt'</code></pre>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>you <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"you.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
 <section id="품사-토큰화" class="level2">
 <h2 class="anchored" data-anchor-id="품사-토큰화">품사 토큰화</h2>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>kim <span class="sc">%&gt;%</span> <span class="fu">tibble</span>(<span class="at">text =</span> .) <span class="sc">%&gt;%</span> </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 품사로 토큰화</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> text, <span class="at">token  =</span> pos) <span class="sc">%&gt;%</span> </span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> word, </span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"word"</span>, <span class="st">"pos"</span>),</span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">"/"</span>) <span class="ot">-&gt;</span> kim_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Outer names are only allowed for unnamed scalar atomic inputs</code></pre>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>you <span class="sc">%&gt;%</span> <span class="fu">tibble</span>(<span class="at">text =</span> .) <span class="sc">%&gt;%</span> </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 품사로 토큰화</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> text, <span class="at">token  =</span> pos) <span class="sc">%&gt;%</span> </span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> word, </span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"word"</span>, <span class="st">"pos"</span>),</span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">"/"</span>) <span class="ot">-&gt;</span> you_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Outer names are only allowed for unnamed scalar atomic inputs</code></pre>
 </div>
@@ -362,8 +339,6 @@ NULL</code></pre>
 <h2 class="anchored" data-anchor-id="총-단어">총 단어</h2>
 <p>셀 하나에 토큰이 하나씩 저장, df 행 갯수가 가사에 사용된 단어 수</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(kim_df) <span class="ot">-&gt;</span> n_kim</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(you_df) <span class="ot">-&gt;</span> n_you</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data.table</span>(</span>
@@ -371,15 +346,14 @@ NULL</code></pre>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  유재하 <span class="ot">=</span> n_you</span>
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="st">"가사 어휘 수"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="vddrthzgcs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="gtgtxvqhzm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#vddrthzgcs) .gt_table {
+:where(#gtgtxvqhzm) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -404,7 +378,7 @@ NULL</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_heading {
+:where(#gtgtxvqhzm) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -416,7 +390,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_title {
+:where(#gtgtxvqhzm) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -428,7 +402,7 @@ NULL</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#vddrthzgcs) .gt_subtitle {
+:where(#gtgtxvqhzm) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -440,13 +414,13 @@ NULL</code></pre>
   border-top-width: 0;
 }
 
-:where(#vddrthzgcs) .gt_bottom_border {
+:where(#gtgtxvqhzm) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_col_headings {
+:where(#gtgtxvqhzm) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -461,7 +435,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_col_heading {
+:where(#gtgtxvqhzm) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -481,7 +455,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#vddrthzgcs) .gt_column_spanner_outer {
+:where(#gtgtxvqhzm) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -493,15 +467,15 @@ NULL</code></pre>
   padding-right: 4px;
 }
 
-:where(#vddrthzgcs) .gt_column_spanner_outer:first-child {
+:where(#gtgtxvqhzm) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#vddrthzgcs) .gt_column_spanner_outer:last-child {
+:where(#gtgtxvqhzm) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#vddrthzgcs) .gt_column_spanner {
+:where(#gtgtxvqhzm) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -513,7 +487,7 @@ NULL</code></pre>
   width: 100%;
 }
 
-:where(#vddrthzgcs) .gt_group_heading {
+:where(#gtgtxvqhzm) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -538,7 +512,7 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#vddrthzgcs) .gt_empty_group_heading {
+:where(#gtgtxvqhzm) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -553,15 +527,15 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#vddrthzgcs) .gt_from_md > :first-child {
+:where(#gtgtxvqhzm) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#vddrthzgcs) .gt_from_md > :last-child {
+:where(#gtgtxvqhzm) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#vddrthzgcs) .gt_row {
+:where(#gtgtxvqhzm) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -580,7 +554,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#vddrthzgcs) .gt_stub {
+:where(#gtgtxvqhzm) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -593,7 +567,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#vddrthzgcs) .gt_stub_row_group {
+:where(#gtgtxvqhzm) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -607,11 +581,11 @@ NULL</code></pre>
   vertical-align: top;
 }
 
-:where(#vddrthzgcs) .gt_row_group_first td {
+:where(#gtgtxvqhzm) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#vddrthzgcs) .gt_summary_row {
+:where(#gtgtxvqhzm) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -621,16 +595,16 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#vddrthzgcs) .gt_first_summary_row {
+:where(#gtgtxvqhzm) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_first_summary_row.thick {
+:where(#gtgtxvqhzm) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#vddrthzgcs) .gt_last_summary_row {
+:where(#gtgtxvqhzm) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -640,7 +614,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_grand_summary_row {
+:where(#gtgtxvqhzm) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -650,7 +624,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#vddrthzgcs) .gt_first_grand_summary_row {
+:where(#gtgtxvqhzm) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -660,11 +634,11 @@ NULL</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_striped {
+:where(#gtgtxvqhzm) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#vddrthzgcs) .gt_table_body {
+:where(#gtgtxvqhzm) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -673,7 +647,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_footnotes {
+:where(#gtgtxvqhzm) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -687,7 +661,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_footnote {
+:where(#gtgtxvqhzm) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -696,7 +670,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#vddrthzgcs) .gt_sourcenotes {
+:where(#gtgtxvqhzm) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -710,7 +684,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vddrthzgcs) .gt_sourcenote {
+:where(#gtgtxvqhzm) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -718,64 +692,64 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#vddrthzgcs) .gt_left {
+:where(#gtgtxvqhzm) .gt_left {
   text-align: left;
 }
 
-:where(#vddrthzgcs) .gt_center {
+:where(#gtgtxvqhzm) .gt_center {
   text-align: center;
 }
 
-:where(#vddrthzgcs) .gt_right {
+:where(#gtgtxvqhzm) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#vddrthzgcs) .gt_font_normal {
+:where(#gtgtxvqhzm) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#vddrthzgcs) .gt_font_bold {
+:where(#gtgtxvqhzm) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#vddrthzgcs) .gt_font_italic {
+:where(#gtgtxvqhzm) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#vddrthzgcs) .gt_super {
+:where(#gtgtxvqhzm) .gt_super {
   font-size: 65%;
 }
 
-:where(#vddrthzgcs) .gt_footnote_marks {
+:where(#gtgtxvqhzm) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#vddrthzgcs) .gt_asterisk {
+:where(#gtgtxvqhzm) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#vddrthzgcs) .gt_indent_1 {
+:where(#gtgtxvqhzm) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#vddrthzgcs) .gt_indent_2 {
+:where(#gtgtxvqhzm) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#vddrthzgcs) .gt_indent_3 {
+:where(#gtgtxvqhzm) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#vddrthzgcs) .gt_indent_4 {
+:where(#gtgtxvqhzm) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#vddrthzgcs) .gt_indent_5 {
+:where(#gtgtxvqhzm) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -807,8 +781,6 @@ NULL</code></pre>
 <h2 class="anchored" data-anchor-id="상위-빈도-명사">상위 빈도 명사</h2>
 <p>각 가수 별 사용 어휘로 나눈 상대빈도 계산. 사용 단어 수 천대 이므로 1000분율로 계산.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 김광석 가사 사용 어휘수 </span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>kim_df <span class="ot">-&gt;</span> df</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>n_kim <span class="ot">-&gt;</span> n_total</span>
@@ -858,7 +830,6 @@ NULL</code></pre>
 <span id="cb33-47"><a href="#cb33-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">n...5 =</span> <span class="st">"빈도"</span>,</span>
 <span id="cb33-48"><a href="#cb33-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_bytotal10000...6 =</span> <span class="st">"만분율"</span></span>
 <span id="cb33-49"><a href="#cb33-49" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `word` -&gt; `word...1`
@@ -870,12 +841,12 @@ NULL</code></pre>
 </div>
 <div class="cell-output-display">
 
-<div id="lxriwfckht" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="fgcmboiovp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#lxriwfckht) .gt_table {
+:where(#fgcmboiovp) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -900,7 +871,7 @@ NULL</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_heading {
+:where(#fgcmboiovp) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -912,7 +883,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_title {
+:where(#fgcmboiovp) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -924,7 +895,7 @@ NULL</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#lxriwfckht) .gt_subtitle {
+:where(#fgcmboiovp) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -936,13 +907,13 @@ NULL</code></pre>
   border-top-width: 0;
 }
 
-:where(#lxriwfckht) .gt_bottom_border {
+:where(#fgcmboiovp) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_col_headings {
+:where(#fgcmboiovp) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -957,7 +928,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_col_heading {
+:where(#fgcmboiovp) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -977,7 +948,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#lxriwfckht) .gt_column_spanner_outer {
+:where(#fgcmboiovp) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -989,15 +960,15 @@ NULL</code></pre>
   padding-right: 4px;
 }
 
-:where(#lxriwfckht) .gt_column_spanner_outer:first-child {
+:where(#fgcmboiovp) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#lxriwfckht) .gt_column_spanner_outer:last-child {
+:where(#fgcmboiovp) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#lxriwfckht) .gt_column_spanner {
+:where(#fgcmboiovp) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1009,7 +980,7 @@ NULL</code></pre>
   width: 100%;
 }
 
-:where(#lxriwfckht) .gt_group_heading {
+:where(#fgcmboiovp) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1034,7 +1005,7 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#lxriwfckht) .gt_empty_group_heading {
+:where(#fgcmboiovp) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1049,15 +1020,15 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#lxriwfckht) .gt_from_md > :first-child {
+:where(#fgcmboiovp) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#lxriwfckht) .gt_from_md > :last-child {
+:where(#fgcmboiovp) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#lxriwfckht) .gt_row {
+:where(#fgcmboiovp) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1076,7 +1047,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#lxriwfckht) .gt_stub {
+:where(#fgcmboiovp) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1089,7 +1060,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#lxriwfckht) .gt_stub_row_group {
+:where(#fgcmboiovp) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1103,11 +1074,11 @@ NULL</code></pre>
   vertical-align: top;
 }
 
-:where(#lxriwfckht) .gt_row_group_first td {
+:where(#fgcmboiovp) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#lxriwfckht) .gt_summary_row {
+:where(#fgcmboiovp) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1117,16 +1088,16 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#lxriwfckht) .gt_first_summary_row {
+:where(#fgcmboiovp) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_first_summary_row.thick {
+:where(#fgcmboiovp) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#lxriwfckht) .gt_last_summary_row {
+:where(#fgcmboiovp) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1136,7 +1107,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_grand_summary_row {
+:where(#fgcmboiovp) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1146,7 +1117,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#lxriwfckht) .gt_first_grand_summary_row {
+:where(#fgcmboiovp) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1156,11 +1127,11 @@ NULL</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_striped {
+:where(#fgcmboiovp) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#lxriwfckht) .gt_table_body {
+:where(#fgcmboiovp) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1169,7 +1140,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_footnotes {
+:where(#fgcmboiovp) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1183,7 +1154,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_footnote {
+:where(#fgcmboiovp) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1192,7 +1163,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#lxriwfckht) .gt_sourcenotes {
+:where(#fgcmboiovp) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1206,7 +1177,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#lxriwfckht) .gt_sourcenote {
+:where(#fgcmboiovp) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1214,64 +1185,64 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#lxriwfckht) .gt_left {
+:where(#fgcmboiovp) .gt_left {
   text-align: left;
 }
 
-:where(#lxriwfckht) .gt_center {
+:where(#fgcmboiovp) .gt_center {
   text-align: center;
 }
 
-:where(#lxriwfckht) .gt_right {
+:where(#fgcmboiovp) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#lxriwfckht) .gt_font_normal {
+:where(#fgcmboiovp) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#lxriwfckht) .gt_font_bold {
+:where(#fgcmboiovp) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#lxriwfckht) .gt_font_italic {
+:where(#fgcmboiovp) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#lxriwfckht) .gt_super {
+:where(#fgcmboiovp) .gt_super {
   font-size: 65%;
 }
 
-:where(#lxriwfckht) .gt_footnote_marks {
+:where(#fgcmboiovp) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#lxriwfckht) .gt_asterisk {
+:where(#fgcmboiovp) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#lxriwfckht) .gt_indent_1 {
+:where(#fgcmboiovp) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#lxriwfckht) .gt_indent_2 {
+:where(#fgcmboiovp) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#lxriwfckht) .gt_indent_3 {
+:where(#fgcmboiovp) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#lxriwfckht) .gt_indent_4 {
+:where(#fgcmboiovp) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#lxriwfckht) .gt_indent_5 {
+:where(#fgcmboiovp) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1402,8 +1373,6 @@ NULL</code></pre>
 <section id="함께-사용한-단어" class="level2">
 <h2 class="anchored" data-anchor-id="함께-사용한-단어">함께 사용한 단어</h2>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터프레임 공통어 결합</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  kim_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(word, <span class="at">sort =</span> T),</span>
@@ -1430,15 +1399,14 @@ NULL</code></pre>
 <span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">n.y =</span> <span class="st">"유재하"</span>,</span>
 <span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">you_by10000 =</span> <span class="st">"유재하"</span></span>
 <span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="hbkwqiljmq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="njkawlneba" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#hbkwqiljmq) .gt_table {
+:where(#njkawlneba) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1463,7 +1431,7 @@ NULL</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_heading {
+:where(#njkawlneba) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1475,7 +1443,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_title {
+:where(#njkawlneba) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1487,7 +1455,7 @@ NULL</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#hbkwqiljmq) .gt_subtitle {
+:where(#njkawlneba) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1499,13 +1467,13 @@ NULL</code></pre>
   border-top-width: 0;
 }
 
-:where(#hbkwqiljmq) .gt_bottom_border {
+:where(#njkawlneba) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_col_headings {
+:where(#njkawlneba) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1520,7 +1488,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_col_heading {
+:where(#njkawlneba) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1540,7 +1508,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#hbkwqiljmq) .gt_column_spanner_outer {
+:where(#njkawlneba) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1552,15 +1520,15 @@ NULL</code></pre>
   padding-right: 4px;
 }
 
-:where(#hbkwqiljmq) .gt_column_spanner_outer:first-child {
+:where(#njkawlneba) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#hbkwqiljmq) .gt_column_spanner_outer:last-child {
+:where(#njkawlneba) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#hbkwqiljmq) .gt_column_spanner {
+:where(#njkawlneba) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1572,7 +1540,7 @@ NULL</code></pre>
   width: 100%;
 }
 
-:where(#hbkwqiljmq) .gt_group_heading {
+:where(#njkawlneba) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1597,7 +1565,7 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#hbkwqiljmq) .gt_empty_group_heading {
+:where(#njkawlneba) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1612,15 +1580,15 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#hbkwqiljmq) .gt_from_md > :first-child {
+:where(#njkawlneba) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#hbkwqiljmq) .gt_from_md > :last-child {
+:where(#njkawlneba) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#hbkwqiljmq) .gt_row {
+:where(#njkawlneba) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1639,7 +1607,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#hbkwqiljmq) .gt_stub {
+:where(#njkawlneba) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1652,7 +1620,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#hbkwqiljmq) .gt_stub_row_group {
+:where(#njkawlneba) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1666,11 +1634,11 @@ NULL</code></pre>
   vertical-align: top;
 }
 
-:where(#hbkwqiljmq) .gt_row_group_first td {
+:where(#njkawlneba) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#hbkwqiljmq) .gt_summary_row {
+:where(#njkawlneba) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1680,16 +1648,16 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#hbkwqiljmq) .gt_first_summary_row {
+:where(#njkawlneba) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_first_summary_row.thick {
+:where(#njkawlneba) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#hbkwqiljmq) .gt_last_summary_row {
+:where(#njkawlneba) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1699,7 +1667,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_grand_summary_row {
+:where(#njkawlneba) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1709,7 +1677,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#hbkwqiljmq) .gt_first_grand_summary_row {
+:where(#njkawlneba) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1719,11 +1687,11 @@ NULL</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_striped {
+:where(#njkawlneba) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#hbkwqiljmq) .gt_table_body {
+:where(#njkawlneba) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1732,7 +1700,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_footnotes {
+:where(#njkawlneba) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1746,7 +1714,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_footnote {
+:where(#njkawlneba) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1755,7 +1723,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#hbkwqiljmq) .gt_sourcenotes {
+:where(#njkawlneba) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1769,7 +1737,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hbkwqiljmq) .gt_sourcenote {
+:where(#njkawlneba) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1777,64 +1745,64 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#hbkwqiljmq) .gt_left {
+:where(#njkawlneba) .gt_left {
   text-align: left;
 }
 
-:where(#hbkwqiljmq) .gt_center {
+:where(#njkawlneba) .gt_center {
   text-align: center;
 }
 
-:where(#hbkwqiljmq) .gt_right {
+:where(#njkawlneba) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#hbkwqiljmq) .gt_font_normal {
+:where(#njkawlneba) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#hbkwqiljmq) .gt_font_bold {
+:where(#njkawlneba) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#hbkwqiljmq) .gt_font_italic {
+:where(#njkawlneba) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#hbkwqiljmq) .gt_super {
+:where(#njkawlneba) .gt_super {
   font-size: 65%;
 }
 
-:where(#hbkwqiljmq) .gt_footnote_marks {
+:where(#njkawlneba) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#hbkwqiljmq) .gt_asterisk {
+:where(#njkawlneba) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#hbkwqiljmq) .gt_indent_1 {
+:where(#njkawlneba) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#hbkwqiljmq) .gt_indent_2 {
+:where(#njkawlneba) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#hbkwqiljmq) .gt_indent_3 {
+:where(#njkawlneba) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#hbkwqiljmq) .gt_indent_4 {
+:where(#njkawlneba) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#hbkwqiljmq) .gt_indent_5 {
+:where(#njkawlneba) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1951,8 +1919,6 @@ NULL</code></pre>
 <section id="상위-공통어-중-상대적으로-더-많이-쓴-단어" class="level3">
 <h3 class="anchored" data-anchor-id="상위-공통어-중-상대적으로-더-많이-쓴-단어">상위 공통어 중 상대적으로 더 많이 쓴 단어</h3>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 김광석 기준 공통어 데이터프레임 결합</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  kim_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(word, <span class="at">sort =</span> T),</span>
@@ -2004,7 +1970,6 @@ NULL</code></pre>
 <span id="cb36-49"><a href="#cb36-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">you_by10000...7  =</span> <span class="st">"만분율you"</span>,</span>
 <span id="cb36-50"><a href="#cb36-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff...8 =</span> <span class="st">"차이"</span>,</span>
 <span id="cb36-51"><a href="#cb36-51" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `word` -&gt; `word...1`
@@ -2018,12 +1983,12 @@ NULL</code></pre>
 </div>
 <div class="cell-output-display">
 
-<div id="pxjqufktne" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="gqznknimvi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#pxjqufktne) .gt_table {
+:where(#gqznknimvi) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2048,7 +2013,7 @@ NULL</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_heading {
+:where(#gqznknimvi) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2060,7 +2025,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_title {
+:where(#gqznknimvi) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2072,7 +2037,7 @@ NULL</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#pxjqufktne) .gt_subtitle {
+:where(#gqznknimvi) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2084,13 +2049,13 @@ NULL</code></pre>
   border-top-width: 0;
 }
 
-:where(#pxjqufktne) .gt_bottom_border {
+:where(#gqznknimvi) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_col_headings {
+:where(#gqznknimvi) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2105,7 +2070,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_col_heading {
+:where(#gqznknimvi) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2125,7 +2090,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#pxjqufktne) .gt_column_spanner_outer {
+:where(#gqznknimvi) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2137,15 +2102,15 @@ NULL</code></pre>
   padding-right: 4px;
 }
 
-:where(#pxjqufktne) .gt_column_spanner_outer:first-child {
+:where(#gqznknimvi) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#pxjqufktne) .gt_column_spanner_outer:last-child {
+:where(#gqznknimvi) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#pxjqufktne) .gt_column_spanner {
+:where(#gqznknimvi) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2157,7 +2122,7 @@ NULL</code></pre>
   width: 100%;
 }
 
-:where(#pxjqufktne) .gt_group_heading {
+:where(#gqznknimvi) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2182,7 +2147,7 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#pxjqufktne) .gt_empty_group_heading {
+:where(#gqznknimvi) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2197,15 +2162,15 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#pxjqufktne) .gt_from_md > :first-child {
+:where(#gqznknimvi) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#pxjqufktne) .gt_from_md > :last-child {
+:where(#gqznknimvi) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#pxjqufktne) .gt_row {
+:where(#gqznknimvi) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2224,7 +2189,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#pxjqufktne) .gt_stub {
+:where(#gqznknimvi) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2237,7 +2202,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#pxjqufktne) .gt_stub_row_group {
+:where(#gqznknimvi) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2251,11 +2216,11 @@ NULL</code></pre>
   vertical-align: top;
 }
 
-:where(#pxjqufktne) .gt_row_group_first td {
+:where(#gqznknimvi) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#pxjqufktne) .gt_summary_row {
+:where(#gqznknimvi) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2265,16 +2230,16 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#pxjqufktne) .gt_first_summary_row {
+:where(#gqznknimvi) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_first_summary_row.thick {
+:where(#gqznknimvi) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#pxjqufktne) .gt_last_summary_row {
+:where(#gqznknimvi) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2284,7 +2249,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_grand_summary_row {
+:where(#gqznknimvi) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2294,7 +2259,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#pxjqufktne) .gt_first_grand_summary_row {
+:where(#gqznknimvi) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2304,11 +2269,11 @@ NULL</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_striped {
+:where(#gqznknimvi) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#pxjqufktne) .gt_table_body {
+:where(#gqznknimvi) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2317,7 +2282,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_footnotes {
+:where(#gqznknimvi) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2331,7 +2296,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_footnote {
+:where(#gqznknimvi) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2340,7 +2305,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#pxjqufktne) .gt_sourcenotes {
+:where(#gqznknimvi) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2354,7 +2319,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#pxjqufktne) .gt_sourcenote {
+:where(#gqznknimvi) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2362,64 +2327,64 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#pxjqufktne) .gt_left {
+:where(#gqznknimvi) .gt_left {
   text-align: left;
 }
 
-:where(#pxjqufktne) .gt_center {
+:where(#gqznknimvi) .gt_center {
   text-align: center;
 }
 
-:where(#pxjqufktne) .gt_right {
+:where(#gqznknimvi) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#pxjqufktne) .gt_font_normal {
+:where(#gqznknimvi) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#pxjqufktne) .gt_font_bold {
+:where(#gqznknimvi) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#pxjqufktne) .gt_font_italic {
+:where(#gqznknimvi) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#pxjqufktne) .gt_super {
+:where(#gqznknimvi) .gt_super {
   font-size: 65%;
 }
 
-:where(#pxjqufktne) .gt_footnote_marks {
+:where(#gqznknimvi) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#pxjqufktne) .gt_asterisk {
+:where(#gqznknimvi) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#pxjqufktne) .gt_indent_1 {
+:where(#gqznknimvi) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#pxjqufktne) .gt_indent_2 {
+:where(#gqznknimvi) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#pxjqufktne) .gt_indent_3 {
+:where(#gqznknimvi) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#pxjqufktne) .gt_indent_4 {
+:where(#gqznknimvi) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#pxjqufktne) .gt_indent_5 {
+:where(#gqznknimvi) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2584,8 +2549,6 @@ NULL</code></pre>
 <h2 class="anchored" data-anchor-id="문서-전반의-상대빈도">문서 전반의 상대빈도</h2>
 <p>문서 전체의 사용 단어 빈도 계산, 두 가수가 상대적으로 더 많이 사용한 단어가 무엇인지 계산</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행방향 결합. 1 = 김광석 2 = 유재하</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(kim_df, you_df, <span class="at">.id =</span> <span class="st">"singer"</span>)  <span class="sc">%&gt;%</span> </span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_length</span>(word) <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
@@ -2629,7 +2592,6 @@ NULL</code></pre>
 <span id="cb38-41"><a href="#cb38-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">starts_with</span>(<span class="st">"log"</span>), </span>
 <span id="cb38-42"><a href="#cb38-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
 <span id="cb38-43"><a href="#cb38-43" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `word` -&gt; `word...1`
@@ -2641,12 +2603,12 @@ NULL</code></pre>
 </div>
 <div class="cell-output-display">
 
-<div id="xqtjmjebxh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vfsczxratk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#xqtjmjebxh) .gt_table {
+:where(#vfsczxratk) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2671,7 +2633,7 @@ NULL</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_heading {
+:where(#vfsczxratk) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2683,7 +2645,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_title {
+:where(#vfsczxratk) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2695,7 +2657,7 @@ NULL</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#xqtjmjebxh) .gt_subtitle {
+:where(#vfsczxratk) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2707,13 +2669,13 @@ NULL</code></pre>
   border-top-width: 0;
 }
 
-:where(#xqtjmjebxh) .gt_bottom_border {
+:where(#vfsczxratk) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_col_headings {
+:where(#vfsczxratk) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2728,7 +2690,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_col_heading {
+:where(#vfsczxratk) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2748,7 +2710,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#xqtjmjebxh) .gt_column_spanner_outer {
+:where(#vfsczxratk) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2760,15 +2722,15 @@ NULL</code></pre>
   padding-right: 4px;
 }
 
-:where(#xqtjmjebxh) .gt_column_spanner_outer:first-child {
+:where(#vfsczxratk) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#xqtjmjebxh) .gt_column_spanner_outer:last-child {
+:where(#vfsczxratk) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#xqtjmjebxh) .gt_column_spanner {
+:where(#vfsczxratk) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2780,7 +2742,7 @@ NULL</code></pre>
   width: 100%;
 }
 
-:where(#xqtjmjebxh) .gt_group_heading {
+:where(#vfsczxratk) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2805,7 +2767,7 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#xqtjmjebxh) .gt_empty_group_heading {
+:where(#vfsczxratk) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2820,15 +2782,15 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-:where(#xqtjmjebxh) .gt_from_md > :first-child {
+:where(#vfsczxratk) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#xqtjmjebxh) .gt_from_md > :last-child {
+:where(#vfsczxratk) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#xqtjmjebxh) .gt_row {
+:where(#vfsczxratk) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2847,7 +2809,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-:where(#xqtjmjebxh) .gt_stub {
+:where(#vfsczxratk) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2860,7 +2822,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#xqtjmjebxh) .gt_stub_row_group {
+:where(#vfsczxratk) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2874,11 +2836,11 @@ NULL</code></pre>
   vertical-align: top;
 }
 
-:where(#xqtjmjebxh) .gt_row_group_first td {
+:where(#vfsczxratk) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#xqtjmjebxh) .gt_summary_row {
+:where(#vfsczxratk) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2888,16 +2850,16 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#xqtjmjebxh) .gt_first_summary_row {
+:where(#vfsczxratk) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_first_summary_row.thick {
+:where(#vfsczxratk) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#xqtjmjebxh) .gt_last_summary_row {
+:where(#vfsczxratk) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2907,7 +2869,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_grand_summary_row {
+:where(#vfsczxratk) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2917,7 +2879,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#xqtjmjebxh) .gt_first_grand_summary_row {
+:where(#vfsczxratk) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2927,11 +2889,11 @@ NULL</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_striped {
+:where(#vfsczxratk) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#xqtjmjebxh) .gt_table_body {
+:where(#vfsczxratk) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2940,7 +2902,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_footnotes {
+:where(#vfsczxratk) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2954,7 +2916,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_footnote {
+:where(#vfsczxratk) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2963,7 +2925,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#xqtjmjebxh) .gt_sourcenotes {
+:where(#vfsczxratk) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2977,7 +2939,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#xqtjmjebxh) .gt_sourcenote {
+:where(#vfsczxratk) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2985,64 +2947,64 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-:where(#xqtjmjebxh) .gt_left {
+:where(#vfsczxratk) .gt_left {
   text-align: left;
 }
 
-:where(#xqtjmjebxh) .gt_center {
+:where(#vfsczxratk) .gt_center {
   text-align: center;
 }
 
-:where(#xqtjmjebxh) .gt_right {
+:where(#vfsczxratk) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#xqtjmjebxh) .gt_font_normal {
+:where(#vfsczxratk) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#xqtjmjebxh) .gt_font_bold {
+:where(#vfsczxratk) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#xqtjmjebxh) .gt_font_italic {
+:where(#vfsczxratk) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#xqtjmjebxh) .gt_super {
+:where(#vfsczxratk) .gt_super {
   font-size: 65%;
 }
 
-:where(#xqtjmjebxh) .gt_footnote_marks {
+:where(#vfsczxratk) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#xqtjmjebxh) .gt_asterisk {
+:where(#vfsczxratk) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#xqtjmjebxh) .gt_indent_1 {
+:where(#vfsczxratk) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#xqtjmjebxh) .gt_indent_2 {
+:where(#vfsczxratk) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#xqtjmjebxh) .gt_indent_3 {
+:where(#vfsczxratk) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#xqtjmjebxh) .gt_indent_4 {
+:where(#vfsczxratk) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#xqtjmjebxh) .gt_indent_5 {
+:where(#vfsczxratk) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3175,8 +3137,6 @@ NULL</code></pre>
 <section id="감정사전" class="level3">
 <h3 class="anchored" data-anchor-id="감정사전">감정사전</h3>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 코드만 표시</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>url_v <span class="ot">&lt;-</span> <span class="st">"https://github.com/park1200656/KnuSentiLex/archive/refs/heads/master.zip"</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>dest_v <span class="ot">&lt;-</span> <span class="st">"knusenti.zip"</span></span>
@@ -3190,7 +3150,6 @@ NULL</code></pre>
 <span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>senti_name_v <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"KnuSentiLex-master/."</span>)[<span class="dv">9</span>]</span>
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터프레임으로 이입</span></span>
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>senti_dic_df <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="fu">str_c</span>(<span class="st">"data/KnuSentiLex-master/"</span>, senti_name_v), <span class="at">col_names =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: One or more parsing issues, see `problems()` for details</code></pre>
 </div>
@@ -3204,8 +3163,6 @@ dbl (1): X2
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터프레임 열 이름 변경</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>senti_dic_df <span class="ot">&lt;-</span> senti_dic_df <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">word =</span> X1, <span class="at">sScore =</span> X2)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 감정값 오류 수정</span></span>
@@ -3215,7 +3172,6 @@ dbl (1): X2
 <span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 수정 확인</span></span>
 <span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>senti_dic_df <span class="sc">%&gt;%</span> </span>
 <span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sScore)) <span class="sc">%&gt;%</span> <span class="fu">count</span>(sScore)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   sScore     n
@@ -3226,13 +3182,10 @@ dbl (1): X2
 4      1  2268
 5      2  2603</code></pre>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일로 저장</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(senti_dic_df, <span class="st">"knu_dic.rds"</span>)</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 저장 확인</span></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"^knu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "knu_dic.rds"  "knusenti.zip"</code></pre>
 </div>
@@ -3241,26 +3194,18 @@ dbl (1): X2
 <section id="단어-빈도" class="level3">
 <h3 class="anchored" data-anchor-id="단어-빈도">단어 빈도</h3>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 감정사전과 결합</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">readRDS</span>(<span class="st">"knu_dic.rds"</span>) <span class="ot">-&gt;</span> knu_dic_df</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>kim_df <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(knu_dic_df) <span class="ot">-&gt;</span> emo_kim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining, by = "word"</code></pre>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>you_df <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(knu_dic_df) <span class="ot">-&gt;</span> emo_you</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining, by = "word"</code></pre>
 </div>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 두 가수의 값을 보기 편하게 열방향으로 결합</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 김광석</span></span>
@@ -3291,7 +3236,6 @@ dbl (1): X2
 <span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">sScore...5 =</span> <span class="st">"감정점수"</span>,</span>
 <span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">n...6 =</span> <span class="st">"빈도"</span></span>
 <span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `word` -&gt; `word...1`
@@ -3303,12 +3247,12 @@ dbl (1): X2
 </div>
 <div class="cell-output-display">
 
-<div id="gtvxbznnkp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="jmlzjgqpar" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#gtvxbznnkp) .gt_table {
+:where(#jmlzjgqpar) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3333,7 +3277,7 @@ dbl (1): X2
   border-left-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_heading {
+:where(#jmlzjgqpar) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3345,7 +3289,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_title {
+:where(#jmlzjgqpar) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3357,7 +3301,7 @@ dbl (1): X2
   border-bottom-width: 0;
 }
 
-:where(#gtvxbznnkp) .gt_subtitle {
+:where(#jmlzjgqpar) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3369,13 +3313,13 @@ dbl (1): X2
   border-top-width: 0;
 }
 
-:where(#gtvxbznnkp) .gt_bottom_border {
+:where(#jmlzjgqpar) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_col_headings {
+:where(#jmlzjgqpar) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3390,7 +3334,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_col_heading {
+:where(#jmlzjgqpar) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3410,7 +3354,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#gtvxbznnkp) .gt_column_spanner_outer {
+:where(#jmlzjgqpar) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3422,15 +3366,15 @@ dbl (1): X2
   padding-right: 4px;
 }
 
-:where(#gtvxbznnkp) .gt_column_spanner_outer:first-child {
+:where(#jmlzjgqpar) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#gtvxbznnkp) .gt_column_spanner_outer:last-child {
+:where(#jmlzjgqpar) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#gtvxbznnkp) .gt_column_spanner {
+:where(#jmlzjgqpar) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3442,7 +3386,7 @@ dbl (1): X2
   width: 100%;
 }
 
-:where(#gtvxbznnkp) .gt_group_heading {
+:where(#jmlzjgqpar) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3467,7 +3411,7 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#gtvxbznnkp) .gt_empty_group_heading {
+:where(#jmlzjgqpar) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3482,15 +3426,15 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#gtvxbznnkp) .gt_from_md > :first-child {
+:where(#jmlzjgqpar) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#gtvxbznnkp) .gt_from_md > :last-child {
+:where(#jmlzjgqpar) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#gtvxbznnkp) .gt_row {
+:where(#jmlzjgqpar) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3509,7 +3453,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#gtvxbznnkp) .gt_stub {
+:where(#jmlzjgqpar) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3522,7 +3466,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#gtvxbznnkp) .gt_stub_row_group {
+:where(#jmlzjgqpar) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3536,11 +3480,11 @@ dbl (1): X2
   vertical-align: top;
 }
 
-:where(#gtvxbznnkp) .gt_row_group_first td {
+:where(#jmlzjgqpar) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#gtvxbznnkp) .gt_summary_row {
+:where(#jmlzjgqpar) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3550,16 +3494,16 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#gtvxbznnkp) .gt_first_summary_row {
+:where(#jmlzjgqpar) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_first_summary_row.thick {
+:where(#jmlzjgqpar) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#gtvxbznnkp) .gt_last_summary_row {
+:where(#jmlzjgqpar) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3569,7 +3513,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_grand_summary_row {
+:where(#jmlzjgqpar) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3579,7 +3523,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#gtvxbznnkp) .gt_first_grand_summary_row {
+:where(#jmlzjgqpar) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3589,11 +3533,11 @@ dbl (1): X2
   border-top-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_striped {
+:where(#jmlzjgqpar) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#gtvxbznnkp) .gt_table_body {
+:where(#jmlzjgqpar) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3602,7 +3546,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_footnotes {
+:where(#jmlzjgqpar) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3616,7 +3560,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_footnote {
+:where(#jmlzjgqpar) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3625,7 +3569,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#gtvxbznnkp) .gt_sourcenotes {
+:where(#jmlzjgqpar) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3639,7 +3583,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#gtvxbznnkp) .gt_sourcenote {
+:where(#jmlzjgqpar) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3647,64 +3591,64 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#gtvxbznnkp) .gt_left {
+:where(#jmlzjgqpar) .gt_left {
   text-align: left;
 }
 
-:where(#gtvxbznnkp) .gt_center {
+:where(#jmlzjgqpar) .gt_center {
   text-align: center;
 }
 
-:where(#gtvxbznnkp) .gt_right {
+:where(#jmlzjgqpar) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#gtvxbznnkp) .gt_font_normal {
+:where(#jmlzjgqpar) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#gtvxbznnkp) .gt_font_bold {
+:where(#jmlzjgqpar) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#gtvxbznnkp) .gt_font_italic {
+:where(#jmlzjgqpar) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#gtvxbznnkp) .gt_super {
+:where(#jmlzjgqpar) .gt_super {
   font-size: 65%;
 }
 
-:where(#gtvxbznnkp) .gt_footnote_marks {
+:where(#jmlzjgqpar) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#gtvxbznnkp) .gt_asterisk {
+:where(#jmlzjgqpar) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#gtvxbznnkp) .gt_indent_1 {
+:where(#jmlzjgqpar) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#gtvxbznnkp) .gt_indent_2 {
+:where(#jmlzjgqpar) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#gtvxbznnkp) .gt_indent_3 {
+:where(#jmlzjgqpar) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#gtvxbznnkp) .gt_indent_4 {
+:where(#jmlzjgqpar) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#gtvxbznnkp) .gt_indent_5 {
+:where(#jmlzjgqpar) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3838,8 +3782,6 @@ dbl (1): X2
 <section id="긍정어-부정어-비율" class="level3">
 <h3 class="anchored" data-anchor-id="긍정어-부정어-비율">긍정어 / 부정어 비율</h3>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>emo_kim <span class="sc">%&gt;%</span> </span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(감정 <span class="ot">=</span> <span class="fu">case_when</span>(</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    sScore <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"긍정"</span>,</span>
@@ -3874,15 +3816,14 @@ dbl (1): X2
 <span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">n.y =</span> <span class="st">"빈도"</span>,</span>
 <span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent.y =</span> <span class="st">"백분율"</span></span>
 <span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a>  )  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="zhxjkqrmdx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xtnqjckhbt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#zhxjkqrmdx) .gt_table {
+:where(#xtnqjckhbt) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3907,7 +3848,7 @@ dbl (1): X2
   border-left-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_heading {
+:where(#xtnqjckhbt) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3919,7 +3860,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_title {
+:where(#xtnqjckhbt) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3931,7 +3872,7 @@ dbl (1): X2
   border-bottom-width: 0;
 }
 
-:where(#zhxjkqrmdx) .gt_subtitle {
+:where(#xtnqjckhbt) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3943,13 +3884,13 @@ dbl (1): X2
   border-top-width: 0;
 }
 
-:where(#zhxjkqrmdx) .gt_bottom_border {
+:where(#xtnqjckhbt) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_col_headings {
+:where(#xtnqjckhbt) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3964,7 +3905,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_col_heading {
+:where(#xtnqjckhbt) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3984,7 +3925,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#zhxjkqrmdx) .gt_column_spanner_outer {
+:where(#xtnqjckhbt) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3996,15 +3937,15 @@ dbl (1): X2
   padding-right: 4px;
 }
 
-:where(#zhxjkqrmdx) .gt_column_spanner_outer:first-child {
+:where(#xtnqjckhbt) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#zhxjkqrmdx) .gt_column_spanner_outer:last-child {
+:where(#xtnqjckhbt) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#zhxjkqrmdx) .gt_column_spanner {
+:where(#xtnqjckhbt) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4016,7 +3957,7 @@ dbl (1): X2
   width: 100%;
 }
 
-:where(#zhxjkqrmdx) .gt_group_heading {
+:where(#xtnqjckhbt) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4041,7 +3982,7 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#zhxjkqrmdx) .gt_empty_group_heading {
+:where(#xtnqjckhbt) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4056,15 +3997,15 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#zhxjkqrmdx) .gt_from_md > :first-child {
+:where(#xtnqjckhbt) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#zhxjkqrmdx) .gt_from_md > :last-child {
+:where(#xtnqjckhbt) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#zhxjkqrmdx) .gt_row {
+:where(#xtnqjckhbt) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4083,7 +4024,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#zhxjkqrmdx) .gt_stub {
+:where(#xtnqjckhbt) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4096,7 +4037,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#zhxjkqrmdx) .gt_stub_row_group {
+:where(#xtnqjckhbt) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4110,11 +4051,11 @@ dbl (1): X2
   vertical-align: top;
 }
 
-:where(#zhxjkqrmdx) .gt_row_group_first td {
+:where(#xtnqjckhbt) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#zhxjkqrmdx) .gt_summary_row {
+:where(#xtnqjckhbt) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4124,16 +4065,16 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#zhxjkqrmdx) .gt_first_summary_row {
+:where(#xtnqjckhbt) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_first_summary_row.thick {
+:where(#xtnqjckhbt) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#zhxjkqrmdx) .gt_last_summary_row {
+:where(#xtnqjckhbt) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4143,7 +4084,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_grand_summary_row {
+:where(#xtnqjckhbt) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4153,7 +4094,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#zhxjkqrmdx) .gt_first_grand_summary_row {
+:where(#xtnqjckhbt) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4163,11 +4104,11 @@ dbl (1): X2
   border-top-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_striped {
+:where(#xtnqjckhbt) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#zhxjkqrmdx) .gt_table_body {
+:where(#xtnqjckhbt) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4176,7 +4117,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_footnotes {
+:where(#xtnqjckhbt) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4190,7 +4131,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_footnote {
+:where(#xtnqjckhbt) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4199,7 +4140,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#zhxjkqrmdx) .gt_sourcenotes {
+:where(#xtnqjckhbt) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4213,7 +4154,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#zhxjkqrmdx) .gt_sourcenote {
+:where(#xtnqjckhbt) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4221,64 +4162,64 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#zhxjkqrmdx) .gt_left {
+:where(#xtnqjckhbt) .gt_left {
   text-align: left;
 }
 
-:where(#zhxjkqrmdx) .gt_center {
+:where(#xtnqjckhbt) .gt_center {
   text-align: center;
 }
 
-:where(#zhxjkqrmdx) .gt_right {
+:where(#xtnqjckhbt) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#zhxjkqrmdx) .gt_font_normal {
+:where(#xtnqjckhbt) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#zhxjkqrmdx) .gt_font_bold {
+:where(#xtnqjckhbt) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#zhxjkqrmdx) .gt_font_italic {
+:where(#xtnqjckhbt) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#zhxjkqrmdx) .gt_super {
+:where(#xtnqjckhbt) .gt_super {
   font-size: 65%;
 }
 
-:where(#zhxjkqrmdx) .gt_footnote_marks {
+:where(#xtnqjckhbt) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#zhxjkqrmdx) .gt_asterisk {
+:where(#xtnqjckhbt) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#zhxjkqrmdx) .gt_indent_1 {
+:where(#xtnqjckhbt) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#zhxjkqrmdx) .gt_indent_2 {
+:where(#xtnqjckhbt) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#zhxjkqrmdx) .gt_indent_3 {
+:where(#xtnqjckhbt) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#zhxjkqrmdx) .gt_indent_4 {
+:where(#xtnqjckhbt) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#zhxjkqrmdx) .gt_indent_5 {
+:where(#xtnqjckhbt) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4338,8 +4279,6 @@ dbl (1): X2
 <section id="함께-사용된-긍정어" class="level3">
 <h3 class="anchored" data-anchor-id="함께-사용된-긍정어">함께 사용된 긍정어</h3>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  emo2_kim <span class="sc">%&gt;%</span> <span class="fu">count</span>(word, 감정, <span class="at">sort =</span> T),</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  emo2_you <span class="sc">%&gt;%</span> <span class="fu">count</span>(word, 감정, <span class="at">sort =</span> T),</span>
@@ -4366,15 +4305,14 @@ dbl (1): X2
 <span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">kim_by10000 =</span> <span class="st">"kim"</span>,</span>
 <span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">you_by10000 =</span> <span class="st">"you"</span></span>
 <span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="qzrgngnrhw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tywaklzcbe" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#qzrgngnrhw) .gt_table {
+:where(#tywaklzcbe) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4399,7 +4337,7 @@ dbl (1): X2
   border-left-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_heading {
+:where(#tywaklzcbe) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4411,7 +4349,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_title {
+:where(#tywaklzcbe) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4423,7 +4361,7 @@ dbl (1): X2
   border-bottom-width: 0;
 }
 
-:where(#qzrgngnrhw) .gt_subtitle {
+:where(#tywaklzcbe) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4435,13 +4373,13 @@ dbl (1): X2
   border-top-width: 0;
 }
 
-:where(#qzrgngnrhw) .gt_bottom_border {
+:where(#tywaklzcbe) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_col_headings {
+:where(#tywaklzcbe) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4456,7 +4394,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_col_heading {
+:where(#tywaklzcbe) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4476,7 +4414,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#qzrgngnrhw) .gt_column_spanner_outer {
+:where(#tywaklzcbe) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4488,15 +4426,15 @@ dbl (1): X2
   padding-right: 4px;
 }
 
-:where(#qzrgngnrhw) .gt_column_spanner_outer:first-child {
+:where(#tywaklzcbe) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#qzrgngnrhw) .gt_column_spanner_outer:last-child {
+:where(#tywaklzcbe) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#qzrgngnrhw) .gt_column_spanner {
+:where(#tywaklzcbe) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4508,7 +4446,7 @@ dbl (1): X2
   width: 100%;
 }
 
-:where(#qzrgngnrhw) .gt_group_heading {
+:where(#tywaklzcbe) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4533,7 +4471,7 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#qzrgngnrhw) .gt_empty_group_heading {
+:where(#tywaklzcbe) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4548,15 +4486,15 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#qzrgngnrhw) .gt_from_md > :first-child {
+:where(#tywaklzcbe) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#qzrgngnrhw) .gt_from_md > :last-child {
+:where(#tywaklzcbe) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#qzrgngnrhw) .gt_row {
+:where(#tywaklzcbe) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4575,7 +4513,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#qzrgngnrhw) .gt_stub {
+:where(#tywaklzcbe) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4588,7 +4526,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#qzrgngnrhw) .gt_stub_row_group {
+:where(#tywaklzcbe) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4602,11 +4540,11 @@ dbl (1): X2
   vertical-align: top;
 }
 
-:where(#qzrgngnrhw) .gt_row_group_first td {
+:where(#tywaklzcbe) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#qzrgngnrhw) .gt_summary_row {
+:where(#tywaklzcbe) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4616,16 +4554,16 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#qzrgngnrhw) .gt_first_summary_row {
+:where(#tywaklzcbe) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_first_summary_row.thick {
+:where(#tywaklzcbe) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#qzrgngnrhw) .gt_last_summary_row {
+:where(#tywaklzcbe) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4635,7 +4573,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_grand_summary_row {
+:where(#tywaklzcbe) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4645,7 +4583,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#qzrgngnrhw) .gt_first_grand_summary_row {
+:where(#tywaklzcbe) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4655,11 +4593,11 @@ dbl (1): X2
   border-top-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_striped {
+:where(#tywaklzcbe) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#qzrgngnrhw) .gt_table_body {
+:where(#tywaklzcbe) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4668,7 +4606,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_footnotes {
+:where(#tywaklzcbe) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4682,7 +4620,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_footnote {
+:where(#tywaklzcbe) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4691,7 +4629,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#qzrgngnrhw) .gt_sourcenotes {
+:where(#tywaklzcbe) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4705,7 +4643,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#qzrgngnrhw) .gt_sourcenote {
+:where(#tywaklzcbe) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4713,64 +4651,64 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#qzrgngnrhw) .gt_left {
+:where(#tywaklzcbe) .gt_left {
   text-align: left;
 }
 
-:where(#qzrgngnrhw) .gt_center {
+:where(#tywaklzcbe) .gt_center {
   text-align: center;
 }
 
-:where(#qzrgngnrhw) .gt_right {
+:where(#tywaklzcbe) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#qzrgngnrhw) .gt_font_normal {
+:where(#tywaklzcbe) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#qzrgngnrhw) .gt_font_bold {
+:where(#tywaklzcbe) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#qzrgngnrhw) .gt_font_italic {
+:where(#tywaklzcbe) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#qzrgngnrhw) .gt_super {
+:where(#tywaklzcbe) .gt_super {
   font-size: 65%;
 }
 
-:where(#qzrgngnrhw) .gt_footnote_marks {
+:where(#tywaklzcbe) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#qzrgngnrhw) .gt_asterisk {
+:where(#tywaklzcbe) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#qzrgngnrhw) .gt_indent_1 {
+:where(#tywaklzcbe) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#qzrgngnrhw) .gt_indent_2 {
+:where(#tywaklzcbe) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#qzrgngnrhw) .gt_indent_3 {
+:where(#tywaklzcbe) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#qzrgngnrhw) .gt_indent_4 {
+:where(#tywaklzcbe) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#qzrgngnrhw) .gt_indent_5 {
+:where(#tywaklzcbe) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4845,8 +4783,6 @@ dbl (1): X2
 <section id="함께-사용된-부정어" class="level3">
 <h3 class="anchored" data-anchor-id="함께-사용된-부정어">함께 사용된 부정어</h3>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 공통어 결합</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  emo2_kim <span class="sc">%&gt;%</span> <span class="fu">count</span>(word, 감정, <span class="at">sort =</span> T),</span>
@@ -4874,15 +4810,14 @@ dbl (1): X2
 <span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">kim_by10000 =</span> <span class="st">"kim"</span>,</span>
 <span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">you_by10000 =</span> <span class="st">"you"</span></span>
 <span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="ovnvmrixpr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ucluuxdcan" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#ovnvmrixpr) .gt_table {
+:where(#ucluuxdcan) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4907,7 +4842,7 @@ dbl (1): X2
   border-left-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_heading {
+:where(#ucluuxdcan) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4919,7 +4854,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_title {
+:where(#ucluuxdcan) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4931,7 +4866,7 @@ dbl (1): X2
   border-bottom-width: 0;
 }
 
-:where(#ovnvmrixpr) .gt_subtitle {
+:where(#ucluuxdcan) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4943,13 +4878,13 @@ dbl (1): X2
   border-top-width: 0;
 }
 
-:where(#ovnvmrixpr) .gt_bottom_border {
+:where(#ucluuxdcan) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_col_headings {
+:where(#ucluuxdcan) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4964,7 +4899,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_col_heading {
+:where(#ucluuxdcan) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4984,7 +4919,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#ovnvmrixpr) .gt_column_spanner_outer {
+:where(#ucluuxdcan) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4996,15 +4931,15 @@ dbl (1): X2
   padding-right: 4px;
 }
 
-:where(#ovnvmrixpr) .gt_column_spanner_outer:first-child {
+:where(#ucluuxdcan) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#ovnvmrixpr) .gt_column_spanner_outer:last-child {
+:where(#ucluuxdcan) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#ovnvmrixpr) .gt_column_spanner {
+:where(#ucluuxdcan) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5016,7 +4951,7 @@ dbl (1): X2
   width: 100%;
 }
 
-:where(#ovnvmrixpr) .gt_group_heading {
+:where(#ucluuxdcan) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5041,7 +4976,7 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#ovnvmrixpr) .gt_empty_group_heading {
+:where(#ucluuxdcan) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5056,15 +4991,15 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#ovnvmrixpr) .gt_from_md > :first-child {
+:where(#ucluuxdcan) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#ovnvmrixpr) .gt_from_md > :last-child {
+:where(#ucluuxdcan) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#ovnvmrixpr) .gt_row {
+:where(#ucluuxdcan) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5083,7 +5018,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#ovnvmrixpr) .gt_stub {
+:where(#ucluuxdcan) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5096,7 +5031,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#ovnvmrixpr) .gt_stub_row_group {
+:where(#ucluuxdcan) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5110,11 +5045,11 @@ dbl (1): X2
   vertical-align: top;
 }
 
-:where(#ovnvmrixpr) .gt_row_group_first td {
+:where(#ucluuxdcan) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#ovnvmrixpr) .gt_summary_row {
+:where(#ucluuxdcan) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5124,16 +5059,16 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#ovnvmrixpr) .gt_first_summary_row {
+:where(#ucluuxdcan) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_first_summary_row.thick {
+:where(#ucluuxdcan) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#ovnvmrixpr) .gt_last_summary_row {
+:where(#ucluuxdcan) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5143,7 +5078,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_grand_summary_row {
+:where(#ucluuxdcan) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5153,7 +5088,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#ovnvmrixpr) .gt_first_grand_summary_row {
+:where(#ucluuxdcan) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5163,11 +5098,11 @@ dbl (1): X2
   border-top-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_striped {
+:where(#ucluuxdcan) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#ovnvmrixpr) .gt_table_body {
+:where(#ucluuxdcan) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5176,7 +5111,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_footnotes {
+:where(#ucluuxdcan) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5190,7 +5125,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_footnote {
+:where(#ucluuxdcan) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -5199,7 +5134,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#ovnvmrixpr) .gt_sourcenotes {
+:where(#ucluuxdcan) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5213,7 +5148,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#ovnvmrixpr) .gt_sourcenote {
+:where(#ucluuxdcan) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5221,64 +5156,64 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#ovnvmrixpr) .gt_left {
+:where(#ucluuxdcan) .gt_left {
   text-align: left;
 }
 
-:where(#ovnvmrixpr) .gt_center {
+:where(#ucluuxdcan) .gt_center {
   text-align: center;
 }
 
-:where(#ovnvmrixpr) .gt_right {
+:where(#ucluuxdcan) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#ovnvmrixpr) .gt_font_normal {
+:where(#ucluuxdcan) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#ovnvmrixpr) .gt_font_bold {
+:where(#ucluuxdcan) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#ovnvmrixpr) .gt_font_italic {
+:where(#ucluuxdcan) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#ovnvmrixpr) .gt_super {
+:where(#ucluuxdcan) .gt_super {
   font-size: 65%;
 }
 
-:where(#ovnvmrixpr) .gt_footnote_marks {
+:where(#ucluuxdcan) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#ovnvmrixpr) .gt_asterisk {
+:where(#ucluuxdcan) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#ovnvmrixpr) .gt_indent_1 {
+:where(#ucluuxdcan) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#ovnvmrixpr) .gt_indent_2 {
+:where(#ucluuxdcan) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#ovnvmrixpr) .gt_indent_3 {
+:where(#ucluuxdcan) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#ovnvmrixpr) .gt_indent_4 {
+:where(#ucluuxdcan) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#ovnvmrixpr) .gt_indent_5 {
+:where(#ucluuxdcan) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5353,8 +5288,6 @@ dbl (1): X2
 <section id="감정어-상대빈도" class="level3">
 <h3 class="anchored" data-anchor-id="감정어-상대빈도">감정어 상대빈도</h3>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행방향 결합. 1 = 김광석  2 = 유재하</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(emo_kim, emo_you, <span class="at">.id =</span> <span class="st">"singer"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_length</span>(word) <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
@@ -5396,7 +5329,6 @@ dbl (1): X2
 <span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">starts_with</span>(<span class="st">"log"</span>), </span>
 <span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
 <span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `word` -&gt; `word...1`
@@ -5408,12 +5340,12 @@ dbl (1): X2
 </div>
 <div class="cell-output-display">
 
-<div id="lzbrjpdzas" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="fpidipklup" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#lzbrjpdzas) .gt_table {
+:where(#fpidipklup) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -5438,7 +5370,7 @@ dbl (1): X2
   border-left-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_heading {
+:where(#fpidipklup) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5450,7 +5382,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_title {
+:where(#fpidipklup) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5462,7 +5394,7 @@ dbl (1): X2
   border-bottom-width: 0;
 }
 
-:where(#lzbrjpdzas) .gt_subtitle {
+:where(#fpidipklup) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5474,13 +5406,13 @@ dbl (1): X2
   border-top-width: 0;
 }
 
-:where(#lzbrjpdzas) .gt_bottom_border {
+:where(#fpidipklup) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_col_headings {
+:where(#fpidipklup) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5495,7 +5427,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_col_heading {
+:where(#fpidipklup) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5515,7 +5447,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#lzbrjpdzas) .gt_column_spanner_outer {
+:where(#fpidipklup) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5527,15 +5459,15 @@ dbl (1): X2
   padding-right: 4px;
 }
 
-:where(#lzbrjpdzas) .gt_column_spanner_outer:first-child {
+:where(#fpidipklup) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#lzbrjpdzas) .gt_column_spanner_outer:last-child {
+:where(#fpidipklup) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#lzbrjpdzas) .gt_column_spanner {
+:where(#fpidipklup) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5547,7 +5479,7 @@ dbl (1): X2
   width: 100%;
 }
 
-:where(#lzbrjpdzas) .gt_group_heading {
+:where(#fpidipklup) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5572,7 +5504,7 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#lzbrjpdzas) .gt_empty_group_heading {
+:where(#fpidipklup) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5587,15 +5519,15 @@ dbl (1): X2
   vertical-align: middle;
 }
 
-:where(#lzbrjpdzas) .gt_from_md > :first-child {
+:where(#fpidipklup) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#lzbrjpdzas) .gt_from_md > :last-child {
+:where(#fpidipklup) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#lzbrjpdzas) .gt_row {
+:where(#fpidipklup) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5614,7 +5546,7 @@ dbl (1): X2
   overflow-x: hidden;
 }
 
-:where(#lzbrjpdzas) .gt_stub {
+:where(#fpidipklup) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5627,7 +5559,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#lzbrjpdzas) .gt_stub_row_group {
+:where(#fpidipklup) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5641,11 +5573,11 @@ dbl (1): X2
   vertical-align: top;
 }
 
-:where(#lzbrjpdzas) .gt_row_group_first td {
+:where(#fpidipklup) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#lzbrjpdzas) .gt_summary_row {
+:where(#fpidipklup) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5655,16 +5587,16 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#lzbrjpdzas) .gt_first_summary_row {
+:where(#fpidipklup) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_first_summary_row.thick {
+:where(#fpidipklup) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#lzbrjpdzas) .gt_last_summary_row {
+:where(#fpidipklup) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5674,7 +5606,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_grand_summary_row {
+:where(#fpidipklup) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5684,7 +5616,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#lzbrjpdzas) .gt_first_grand_summary_row {
+:where(#fpidipklup) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5694,11 +5626,11 @@ dbl (1): X2
   border-top-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_striped {
+:where(#fpidipklup) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#lzbrjpdzas) .gt_table_body {
+:where(#fpidipklup) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5707,7 +5639,7 @@ dbl (1): X2
   border-bottom-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_footnotes {
+:where(#fpidipklup) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5721,7 +5653,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_footnote {
+:where(#fpidipklup) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -5730,7 +5662,7 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#lzbrjpdzas) .gt_sourcenotes {
+:where(#fpidipklup) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5744,7 +5676,7 @@ dbl (1): X2
   border-right-color: #D3D3D3;
 }
 
-:where(#lzbrjpdzas) .gt_sourcenote {
+:where(#fpidipklup) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5752,64 +5684,64 @@ dbl (1): X2
   padding-right: 5px;
 }
 
-:where(#lzbrjpdzas) .gt_left {
+:where(#fpidipklup) .gt_left {
   text-align: left;
 }
 
-:where(#lzbrjpdzas) .gt_center {
+:where(#fpidipklup) .gt_center {
   text-align: center;
 }
 
-:where(#lzbrjpdzas) .gt_right {
+:where(#fpidipklup) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#lzbrjpdzas) .gt_font_normal {
+:where(#fpidipklup) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#lzbrjpdzas) .gt_font_bold {
+:where(#fpidipklup) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#lzbrjpdzas) .gt_font_italic {
+:where(#fpidipklup) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#lzbrjpdzas) .gt_super {
+:where(#fpidipklup) .gt_super {
   font-size: 65%;
 }
 
-:where(#lzbrjpdzas) .gt_footnote_marks {
+:where(#fpidipklup) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#lzbrjpdzas) .gt_asterisk {
+:where(#fpidipklup) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#lzbrjpdzas) .gt_indent_1 {
+:where(#fpidipklup) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#lzbrjpdzas) .gt_indent_2 {
+:where(#fpidipklup) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#lzbrjpdzas) .gt_indent_3 {
+:where(#fpidipklup) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#lzbrjpdzas) .gt_indent_4 {
+:where(#fpidipklup) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#lzbrjpdzas) .gt_indent_5 {
+:where(#fpidipklup) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -6135,7 +6067,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
 <span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 5</span></span>
 <span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
 <span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
 <span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
@@ -6418,9 +6350,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb58-306"><a href="#cb58-306" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb58-307"><a href="#cb58-307" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb58-308"><a href="#cb58-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-309"><a href="#cb58-309" aria-hidden="true" tabindex="-1"></a><span class="fu">## 감정어 빈도 </span></span>
+<span id="cb58-309"><a href="#cb58-309" aria-hidden="true" tabindex="-1"></a><span class="fu">## 감정어 빈도</span></span>
 <span id="cb58-310"><a href="#cb58-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-311"><a href="#cb58-311" aria-hidden="true" tabindex="-1"></a><span class="fu">### 감정사전 </span></span>
+<span id="cb58-311"><a href="#cb58-311" aria-hidden="true" tabindex="-1"></a><span class="fu">### 감정사전</span></span>
 <span id="cb58-312"><a href="#cb58-312" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-315"><a href="#cb58-315" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb58-316"><a href="#cb58-316" aria-hidden="true" tabindex="-1"></a><span class="co"># 코드만 표시</span></span>
@@ -6451,7 +6383,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb58-341"><a href="#cb58-341" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"^knu"</span>)</span>
 <span id="cb58-342"><a href="#cb58-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb58-343"><a href="#cb58-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-344"><a href="#cb58-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### 단어 빈도 </span></span>
+<span id="cb58-344"><a href="#cb58-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### 단어 빈도</span></span>
 <span id="cb58-345"><a href="#cb58-345" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-348"><a href="#cb58-348" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb58-349"><a href="#cb58-349" aria-hidden="true" tabindex="-1"></a><span class="co"># 감정사전과 결합</span></span>
@@ -6496,7 +6428,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb58-390"><a href="#cb58-390" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-391"><a href="#cb58-391" aria-hidden="true" tabindex="-1"></a><span class="fu">### </span></span>
 <span id="cb58-392"><a href="#cb58-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-393"><a href="#cb58-393" aria-hidden="true" tabindex="-1"></a><span class="fu">### 긍정어 / 부정어 비율 </span></span>
+<span id="cb58-393"><a href="#cb58-393" aria-hidden="true" tabindex="-1"></a><span class="fu">### 긍정어 / 부정어 비율</span></span>
 <span id="cb58-394"><a href="#cb58-394" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-397"><a href="#cb58-397" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb58-398"><a href="#cb58-398" aria-hidden="true" tabindex="-1"></a>emo_kim <span class="sc">%&gt;%</span> </span>
@@ -6535,7 +6467,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb58-431"><a href="#cb58-431" aria-hidden="true" tabindex="-1"></a>  )  </span>
 <span id="cb58-432"><a href="#cb58-432" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb58-433"><a href="#cb58-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-434"><a href="#cb58-434" aria-hidden="true" tabindex="-1"></a><span class="fu">### 함께 사용된 긍정어 </span></span>
+<span id="cb58-434"><a href="#cb58-434" aria-hidden="true" tabindex="-1"></a><span class="fu">### 함께 사용된 긍정어</span></span>
 <span id="cb58-435"><a href="#cb58-435" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-438"><a href="#cb58-438" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb58-439"><a href="#cb58-439" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(</span>
@@ -6566,7 +6498,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb58-464"><a href="#cb58-464" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb58-465"><a href="#cb58-465" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb58-466"><a href="#cb58-466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-467"><a href="#cb58-467" aria-hidden="true" tabindex="-1"></a><span class="fu">### 함께 사용된 부정어 </span></span>
+<span id="cb58-467"><a href="#cb58-467" aria-hidden="true" tabindex="-1"></a><span class="fu">### 함께 사용된 부정어</span></span>
 <span id="cb58-468"><a href="#cb58-468" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-471"><a href="#cb58-471" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb58-472"><a href="#cb58-472" aria-hidden="true" tabindex="-1"></a><span class="co"># 공통어 결합</span></span>
@@ -6598,7 +6530,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb58-498"><a href="#cb58-498" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb58-499"><a href="#cb58-499" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb58-500"><a href="#cb58-500" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-501"><a href="#cb58-501" aria-hidden="true" tabindex="-1"></a><span class="fu">### 감정어 상대빈도 </span></span>
+<span id="cb58-501"><a href="#cb58-501" aria-hidden="true" tabindex="-1"></a><span class="fu">### 감정어 상대빈도</span></span>
 <span id="cb58-502"><a href="#cb58-502" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-505"><a href="#cb58-505" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb58-506"><a href="#cb58-506" aria-hidden="true" tabindex="-1"></a><span class="co"># 행방향 결합. 1 = 김광석  2 = 유재하</span></span>

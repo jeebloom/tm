@@ -1,0 +1,4 @@
+- source: workout.qmd
+  netlify:
+    - id: 0aca48a4-bf45-416b-9367-4486384f8f17
+      url: 'https://stunning-beijinho-e98f2a.netlify.app'
