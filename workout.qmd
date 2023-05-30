@@ -1,0 +1,518 @@
+---
+title: "김광석, 유재하 리메이크 앨범 가사 비교"
+format:
+  html:
+    toc: true
+    toc-depth: 5
+    html-math-method: katex
+    code-fold: false
+    code-tools: true
+---
+
+# 패키지
+
+```{r}
+c(
+  "tidyverse", # 어지러웠던 R세상을 깔끔하게 정돈. 
+  # "dplyr",     # tidyverse 부착. 공구상자
+  # "stringr",   # tidyverse 부착. 문자형자료 처리
+  "tidytable", # datatable패키지를 tidy인터페이스로. 빠르고 함수명 혼란 제거
+  "rvest",     # 웹 스크래핑 도구
+  "janitor",   # 정제 및 기술통계 도구
+  "tidytext",  # 텍스트를 깔끔하게 정돈하는 도구
+  "RcppMeCab", # 형태소분석기
+  "tidylo",    # 상대빈도 분석
+  "gt"         # tidy원리를 적용한 표 생성. 
+) -> pkg 
+
+sapply(pkg, function(x){
+  if(!require(x, ch = T)) install.packages(x, dependencies = T)
+})
+
+sapply(pkg, require, ch = T)
+```
+
+## (맥북 호환) 실행
+
+```{r}
+par(family="AppleGothic")
+theme_set(theme_gray(base_family='AppleGothic'))
+```
+
+# 자료 가져오기
+
+## 가사 불러오기
+
+김광석 리메이크 앨범 kim
+
+유재하 리메이크 앨범 you
+
+```{r}
+###
+list.files()
+
+# 김광석 리메이크 앨범 / kim
+# 유재하 리메이크 앨범 / you 
+
+kim <- readLines("kim.txt")
+you <- readLines("you.txt")
+```
+
+## 품사 토큰화
+
+```{r}
+kim %>% tibble(text = .) %>% 
+  # 품사로 토큰화
+  unnest_tokens(output = word, input = text, token  = pos) %>% 
+  separate(col = word, 
+           into = c("word", "pos"),
+           sep = "/") -> kim_df
+
+you %>% tibble(text = .) %>% 
+  # 품사로 토큰화
+  unnest_tokens(output = word, input = text, token  = pos) %>% 
+  separate(col = word, 
+           into = c("word", "pos"),
+           sep = "/") -> you_df
+```
+
+# 빈도분석
+
+## 총 단어
+
+셀 하나에 토큰이 하나씩 저장, df 행 갯수가 가사에 사용된 단어 수
+
+```{r}
+nrow(kim_df) -> n_kim
+nrow(you_df) -> n_you
+data.table(
+  김광석 = n_kim,
+  유재하 = n_you
+) %>% gt() %>% 
+  tab_header("가사 어휘 수")
+
+```
+
+## 상위 빈도 명사
+
+각 가수 별 사용 어휘로 나눈 상대빈도 계산. 사용 단어 수 천대 이므로 1000분율로 계산.
+
+```{r}
+
+# 김광석 가사 사용 어휘수 
+kim_df -> df
+n_kim -> n_total
+# 명사 빈도
+df %>% 
+  # 단어 길이 1개는 분석에서 제외
+  filter(str_length(word) > 1) %>% 
+  # 일반명사 mmg, 일반부사 mag, 대명사 np, 형용사 va 
+  filter(pos == 'nng' | pos == 'mag' | pos == 'np' | pos == 'VA') %>% 
+  # 단어 빈도 계산해 정렬
+  count(word, sort = T) %>% 
+  # 1만분률 계산
+  mutate(n_bytotal10000 = round(n/n_total * 10000, 0)) %>% 
+  head(15) -> top_kim
+
+# 유재하 가사 사용 어휘수 
+you_df-> df
+n_you -> n_total
+# 명사 빈도
+df %>% 
+  # 단어 길이 1개는 분석에서 제외
+  filter(str_length(word) > 1) %>% 
+  # 일반명사 mmg, 일반부사 mag, 대명사 np, 형용사 va 
+  filter(pos == 'nng' | pos == 'mag' | pos == 'np' | pos == 'VA') %>% 
+  # 단어 빈도 계산해 정렬
+  count(word, sort = T) %>% 
+  # 1만분률 계산
+  mutate(n_bytotal10000 = round(n/n_total * 10000, 0)) %>% 
+  head(15) -> top_you
+
+
+# 표 하나로 결합
+bind_cols(top_kim, top_you) %>% 
+  gt() %>% tab_header(
+    "상위 빈도 단어"
+  ) %>% tab_spanner(
+    label = "김광석",
+    columns = 1:3
+  ) %>% tab_spanner(
+    label = "유재하",
+    columns = 4:6
+  ) %>% cols_label(
+    word...1 = "단어",
+    n...2 = "빈도",
+    n_bytotal10000...3 = "만분율",
+    word...4 = "단어",
+    n...5 = "빈도",
+    n_bytotal10000...6 = "만분율"
+  )
+```
+
+## 함께 사용한 단어
+
+```{r}
+
+# 데이터프레임 공통어 결합
+inner_join(
+  kim_df %>% count(word, sort = T),
+  you_df %>% count(word, sort = T),
+  by = c("word")
+  ) %>% filter(str_length(word) > 1) %>% 
+  # 1만분률 계산
+  mutate(kim_by10000 = round(n.x/n_kim, 5) * 10000,
+         you_by10000 = round(n.y/n_you, 5) * 10000) %>% 
+  arrange(desc(kim_by10000)) %>% 
+  head(15) %>% 
+  gt() %>% tab_header(
+    "두 가수가 함께 사용한 단어"
+  ) %>% tab_spanner(
+    label = "빈도",
+    columns = 2:3
+  ) %>% tab_spanner(
+    label = "만분률",
+    columns = 4:5
+  ) %>% cols_label(
+    word = "단어",
+    n.x = "김광석",
+    kim_by10000 = "김광석",
+    n.y = "유재하",
+    you_by10000 = "유재하"
+  )
+```
+
+## 상대빈도
+
+### 상위 공통어 중 상대적으로 더 많이 쓴 단어
+
+```{r}
+
+# 김광석 기준 공통어 데이터프레임 결합
+inner_join(
+  kim_df %>% count(word, sort = T),
+  you_df %>% count(word, sort = T),
+  by = c("word")
+  ) %>% filter(str_length(word) > 1) %>% 
+  mutate(kim_by10000 = round(n.x/n_kim, 5) * 10000,
+         you_by10000 = round(n.y/n_you, 5) * 10000,
+  # 사용 어휘 차이 빈도 계산
+         diff = kim_by10000 - you_by10000) %>%
+  # 차이가 큰 순서를 김광석 기준으로 정렬
+  arrange(desc(diff)) %>% 
+  head(15) -> com_kim
+
+
+# 유재하 기준 공통어 데이터프레임 결합
+inner_join(
+  kim_df %>% count(word, sort = T),
+  you_df %>% count(word, sort = T),
+  by = c("word")
+  ) %>% filter(str_length(word) > 1) %>% 
+  mutate(kim_by10000 = round(n.x/n_kim, 5) * 10000,
+         you_by10000 = round(n.y/n_you, 5) * 10000,
+  # 사용 어휘 차이 빈도 계산       
+         diff = kim_by10000 - you_by10000) %>% 
+  # 차이가 큰 순서를 유재하 순서로 정렬
+  arrange(diff) %>% 
+  head(15) -> com_you
+
+# 데이터프레임 결합
+bind_cols(
+  com_kim %>% select.(-c(n.x, n.y)), 
+  com_you %>% select.(-c(n.x, n.y)) 
+) %>% gt() %>% tab_header(
+  "공동어 중 상대적으로 더 많이 쓴 단어"
+  ) %>% tab_spanner(
+    label = "김광석 기준",
+    columns = 1:4
+  ) %>% tab_spanner(
+    label = "유재하 기준",
+    columns = 5:8
+  ) %>% cols_label(
+    word...1 = "단어",
+    kim_by10000...2 = "만분율kim",
+    you_by10000...3  = "만분율you",
+    diff...4 = "차이",
+    word...5 = "단어",
+    kim_by10000...6 = "만분율kim",
+    you_by10000...7  = "만분율you",
+    diff...8 = "차이",
+  )
+```
+
+## 문서 전반의 상대빈도
+
+문서 전체의 사용 단어 빈도 계산, 두 가수가 상대적으로 더 많이 사용한 단어가 무엇인지 계산
+
+```{r}
+# 행방향 결합. 1 = 김광석 2 = 유재하
+bind_rows(kim_df, you_df, .id = "singer")  %>% 
+  filter(str_length(word) > 1) %>% 
+  count(word, singer) %>% 
+  bind_log_odds(set = singer,
+                feature = word, 
+                n = n) %>% 
+  arrange(-log_odds_weighted) -> weighted_log_odds_df
+
+# 열 결합
+bind_cols(
+  # 김광석 상대적으로 더 많이 사용한 단어
+  weighted_log_odds_df %>%   
+  group_by(singer = ifelse(singer == 1, "kim", "you")) %>% 
+  arrange(singer) %>% 
+  select.(-singer) %>%   
+  head(15),
+  
+  # 유재하 상대적으로 더 많이 사용한 단어
+  weighted_log_odds_df %>%   
+  group_by(singer = ifelse(singer == 2, "you", "kim")) %>% 
+  arrange(desc(singer)) %>% 
+  select.(-singer) %>%     
+  head(15) 
+  ) %>% gt() %>% tab_header(
+  "상대적으로 많이 사용한 단어"
+  ) %>% tab_spanner(
+    label = "김광석 기준",
+    columns = 1:3
+  ) %>% tab_spanner(
+    label = "유재하 기준",
+    columns = 4:6
+  ) %>% cols_label(
+    word...1 = "명사",
+    n...2 = "빈도",
+    log_odds_weighted...3 = "가중상대빈도",
+    word...4 = "단어",
+    n...5 = "빈도",
+    log_odds_weighted...6 = "가중상대빈도"
+  ) %>% fmt_number(
+    columns = starts_with("log"), 
+    decimals = 2
+  )
+```
+
+## 감정어 빈도
+
+### 감정사전
+
+```{r}
+# 코드만 표시
+url_v <- "https://github.com/park1200656/KnuSentiLex/archive/refs/heads/master.zip"
+dest_v <- "knusenti.zip"
+download.file(url = url_v, 
+              destfile = dest_v,
+              mode = "wb")
+# 압축을 풀면 KnuSentiLex-master 폴더 생성
+unzip("knusenti.zip")
+# 생성된 폴더내 9번째 파일이 사전파일. 
+# 이 파일명을 사전파일 이름 지정
+senti_name_v <- list.files("KnuSentiLex-master/.")[9]
+# 데이터프레임으로 이입
+senti_dic_df <- read_tsv(str_c("data/KnuSentiLex-master/", senti_name_v), col_names = F)
+# 데이터프레임 열 이름 변경
+senti_dic_df <- senti_dic_df %>% rename(word = X1, sScore = X2)
+# 감정값 오류 수정
+senti_dic_df %>% 
+  filter(!is.na(sScore)) %>% 
+  add_row(word = "갈등", sScore = -1) -> senti_dic_df 
+# 수정 확인
+senti_dic_df %>% 
+  filter(!is.na(sScore)) %>% count(sScore)
+# 파일로 저장
+saveRDS(senti_dic_df, "knu_dic.rds")
+# 저장 확인
+list.files(pattern = "^knu")
+```
+
+### 단어 빈도
+
+```{r}
+# 감정사전과 결합
+readRDS("knu_dic.rds") -> knu_dic_df
+kim_df %>% inner_join(knu_dic_df) -> emo_kim
+
+you_df %>% inner_join(knu_dic_df) -> emo_you
+```
+
+```{r}
+# 두 가수의 값을 보기 편하게 열방향으로 결합
+bind_cols(
+  # 김광석
+  emo_kim %>% 
+    count(word, sScore, sort = T) %>% 
+    filter(str_length(word) > 1) %>% 
+    mutate(word = reorder(word, n)) %>% 
+    head(15),
+  # 유재하
+  emo_you %>% 
+    count(word, sScore, sort = T) %>% 
+    filter(str_length(word) > 1) %>% 
+    mutate(word = reorder(word, n)) %>% 
+    head(15) 
+) %>% gt() %>% tab_header(
+  "많이 사용한 감정어"
+  ) %>% tab_spanner(
+    label = "김광석",
+    columns = 1:3
+  ) %>% tab_spanner(
+    label = "유재하",
+    columns = 4:6
+  ) %>% cols_label(
+    word...1 = "감정어",
+    sScore...2 = "감정점수",
+    n...3 = "빈도",
+    word...4 = "감정어",
+    sScore...5 = "감정점수",
+    n...6 = "빈도"
+  ) 
+```
+
+### 
+
+### 긍정어 / 부정어 비율
+
+```{r}
+emo_kim %>% 
+  mutate(감정 = case_when(
+    sScore > 0 ~ "긍정",
+    sScore < 0 ~ "부정",
+    TRUE ~ "중립"
+    )) -> emo2_kim
+emo_you %>% 
+  mutate(감정 = case_when(
+    sScore > 0 ~ "긍정",
+    sScore < 0 ~ "부정",
+   TRUE ~ "중립"
+   )) -> emo2_you
+# 공통결합
+inner_join(by = "감정",
+    emo2_kim %>% tabyl(감정) %>% 
+    adorn_totals() %>% 
+    adorn_pct_formatting(),
+    emo2_you %>% tabyl(감정) %>% 
+    adorn_totals() %>% 
+    adorn_pct_formatting()
+) %>% gt() %>% tab_header(
+  "감정어 비율"
+  ) %>% tab_spanner(
+    columns = 2:3,
+    label = "김광석"
+  ) %>% tab_spanner(
+    columns = 4:5,
+    label = "유재하"
+  ) %>% cols_label(
+    n.x = "빈도",
+    percent.x = "백분율",
+    n.y = "빈도",
+    percent.y = "백분율"
+  )  
+```
+
+### 함께 사용된 긍정어
+
+```{r}
+inner_join(
+  emo2_kim %>% count(word, 감정, sort = T),
+  emo2_you %>% count(word, 감정, sort = T),
+  by = c("word", "감정")
+) %>% 
+  filter(str_length(word) > 1) %>% 
+  mutate(kim_by10000 = round(n.x/n_kim, 5) * 10000,
+         you_by10000 = round(n.y/n_you, 5) * 10000) %>% 
+  # 감정기준 정렬
+  arrange(감정) %>% 
+  select.(-감정) %>% 
+  head(15) %>% 
+  gt() %>% tab_header(
+    "두 가수가 함께 사용한 긍정어"
+  ) %>% tab_spanner(
+    columns = starts_with("n"),
+    label = "빈도"
+  ) %>% tab_spanner(
+    columns = ends_with("10000"),
+    label = "만분률"
+  ) %>% cols_label(
+    n.x = "kim",
+    n.y = "you",
+    kim_by10000 = "kim",
+    you_by10000 = "you"
+  )
+```
+
+### 함께 사용된 부정어
+
+```{r}
+# 공통어 결합
+inner_join(
+  emo2_kim %>% count(word, 감정, sort = T),
+  emo2_you %>% count(word, 감정, sort = T),
+  by = c("word", "감정")
+) %>% 
+  filter(str_length(word) > 1) %>% 
+  mutate(kim_by10000 = round(n.x/n_kim, 5) * 10000,
+         you_by10000 = round(n.y/n_you, 5) * 10000) %>% 
+  # 감정기준 정렬
+  arrange(desc(감정)) %>% 
+  select.(-감정) %>% 
+  head(14) %>% 
+  gt() %>% tab_header(
+    "두 가수가 함께 사용한 부정어"
+  ) %>% tab_spanner(
+    columns = starts_with("n"),
+    label = "빈도"
+  ) %>% tab_spanner(
+    columns = ends_with("10000"),
+    label = "만분률"
+  ) %>% cols_label(
+    n.x = "kim",
+    n.y = "you",
+    kim_by10000 = "kim",
+    you_by10000 = "you"
+  )
+```
+
+### 감정어 상대빈도
+
+```{r}
+# 행방향 결합. 1 = 김광석  2 = 유재하
+bind_rows(emo_kim, emo_you, .id = "singer") %>% 
+  filter(str_length(word) > 1) %>% 
+  count(word, singer) %>% 
+  bind_log_odds(set = singer,
+                feature = word, 
+                n = n) %>% 
+  arrange(-log_odds_weighted) -> weighted_log_odds_df
+# 열결합
+bind_cols(
+  # 김광석
+  weighted_log_odds_df %>%   
+  group_by(singer = ifelse(singer == 1, "kim", "you")) %>% 
+  arrange(singer) %>% 
+  select.(-singer) %>%   
+  head(15),  
+  # 유재하 
+  weighted_log_odds_df %>%   
+  group_by(singer = ifelse(singer == 1, "kim", "you")) %>% 
+  arrange(desc(singer)) %>% 
+  select.(-singer) %>%   
+  head(15) 
+) %>% gt() %>% tab_header(
+  "상대적으로 더 많이 사용한 감정어"
+  ) %>% tab_spanner(
+    label = "김광석 기준",
+    columns = 1:3
+  ) %>% tab_spanner(
+    label = "유재하 기준",
+    columns = 4:6
+  ) %>% cols_label(
+    word...1 = "감정어",
+    n...2 = "빈도",
+    log_odds_weighted...3 = "가중상대빈도",
+    word...4 = "감정어",
+    n...5 = "빈도",
+    log_odds_weighted...6 = "가중상대빈도"
+  ) %>% fmt_number(
+    columns = starts_with("log"), 
+    decimals = 2
+  )
+```
