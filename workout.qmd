@@ -9,13 +9,13 @@ format:
     code-tools: true
 ---
 
-## 왜 김광석과 유재하 가사 인가? 
+## 왜 김광석과 유재하 가사 인가?
 
 **김광석** *(1964년 출생, 1996년 사망 / 향년 31세)*
 
 **유재하** *(1962년 출생, 1987년 사망 / 향년 25세)*
 
-두 가수 모두
+**두 가수 모두**
 
 -   80년대 싱어송 라이터
 
@@ -39,7 +39,7 @@ c(
   "RcppMeCab", # 형태소분석기
   "tidylo",    # 상대빈도 분석
   "gt"         # tidy원리를 적용한 표 생성. 
-) -> pkg 
+) -> pkg
 
 sapply(pkg, function(x){
   if(!require(x, ch = T)) install.packages(x, dependencies = T)
@@ -531,4 +531,91 @@ bind_cols(
     columns = starts_with("log"), 
     decimals = 2
   )
+```
+
+## 단어맥락(KWIC)
+
+KWIC : KeyWord In Context
+
+```{r}
+old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+```
+
+```{r}
+library(glue)
+library(crayon)
+library(fansi)
+options(crayon.enabled = TRUE)
+crayon_words <- function(input_text, word = " ") {
+  replaced_text <- str_replace_all(input_text, word, "{red {word}}")
+  for(i in 1:length(replaced_text)) {
+    crayon_text <- glue::glue_col(deparse(replaced_text[[i]]))
+    print(crayon_text)
+  }
+}
+"국가적 위기 해결에 앞장서야" %>% 
+  crayon_words(input_text = ., "해결")
+```
+
+문장 단위로 토큰화
+
+```{r}
+kim %>% 
+  tibble(text = .) %>% 
+  unnest_tokens(output = sentence, input = text, 
+                token  = "regex", pattern = "\\.") -> kim_st
+you %>% 
+  tibble(text = .) %>% 
+  unnest_tokens(sentence, text, 
+                token  = "regex", pattern = "\\.") -> you_st
+```
+
+### 1. 사랑 2. 눈물 어느 맥락에서 사용되었는가 
+
+김광석
+
+```{r}
+kim_st %>% 
+  filter(str_detect(sentence, "사랑")) %>% 
+  # 공백문자 및 공백 제거
+  mutate(sentence = str_remove_all(sentence, pattern = "\r|\n"),
+         sentence = str_squish(sentence)) %>% 
+  pull() -> kim_txt
+crayon_words(input_text = kim_txt, "사랑")
+```
+
+유재하
+
+```{r}
+you_st %>% 
+  filter(str_detect(sentence, "사랑")) %>% 
+  # 공백문자 및 공백 제거
+  mutate(sentence = str_remove_all(sentence, pattern = "\r|\n"),
+         sentence = str_squish(sentence)) %>% 
+  pull() -> you_txt
+crayon_words(input_text = you_txt, "사랑")
+```
+
+김광석
+
+```{r}
+kim_st %>% 
+  filter(str_detect(sentence, "눈물")) %>% 
+  # 공백문자 및 공백 제거
+  mutate(sentence = str_remove_all(sentence, pattern = "\r|\n"),
+         sentence = str_squish(sentence)) %>% 
+  pull() -> kim_txt
+crayon_words(input_text = kim_txt, "눈물")
+```
+
+유재하
+
+```{r}
+you_st %>% 
+  filter(str_detect(sentence, "눈물")) %>% 
+  # 공백문자 및 공백 제거
+  mutate(sentence = str_remove_all(sentence, pattern = "\r|\n"),
+         sentence = str_squish(sentence)) %>% 
+  pull() -> you_txt
+crayon_words(input_text = you_txt, "눈물")
 ```
