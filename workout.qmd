@@ -553,7 +553,7 @@ crayon_words <- function(input_text, word = " ") {
     print(crayon_text)
   }
 }
-"국가적 위기 해결에 앞장서야" %>% 
+"국가적 해결에 앞장서야" %>% 
   crayon_words(input_text = ., "해결")
 ```
 
@@ -570,9 +570,9 @@ you %>%
                 token  = "regex", pattern = "\\.") -> you_st
 ```
 
-### 1. 사랑 2. 눈물 어느 맥락에서 사용되었는가 
+### 1. 사랑 2. 눈물 어느 맥락에서 사용되었는가
 
-김광석
+김광석: 상대를 그리워 하고 쌍방이 아닌 '짝사랑' 에 관한 사랑 이야기와 사랑하는 사람을 잊지 못함의 '사랑'
 
 ```{r}
 kim_st %>% 
@@ -584,7 +584,7 @@ kim_st %>%
 crayon_words(input_text = kim_txt, "사랑")
 ```
 
-유재하
+유재하: 쌍방의 '사랑', 우리 함께 했던 사랑, 그리고 헤어졌어도 다시 돌아온 사랑, 어쨋든 연결된 사랑
 
 ```{r}
 you_st %>% 
@@ -596,7 +596,7 @@ you_st %>%
 crayon_words(input_text = you_txt, "사랑")
 ```
 
-김광석
+김광석: 내가 눈물을 흘림, 나의 눈물 묘사
 
 ```{r}
 kim_st %>% 
@@ -608,7 +608,7 @@ kim_st %>%
 crayon_words(input_text = kim_txt, "눈물")
 ```
 
-유재하
+유재하: 너의 눈물, 상대의 눈물 묘사
 
 ```{r}
 you_st %>% 
