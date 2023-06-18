@@ -766,21 +766,6 @@ summary(prep, topics= 1:9)
 combined_df %>% names()
 ```
 
-```{r}
-combined_df %>% 
-  left_join(td_gamma, by = c("ID" = "document")) %>% 
-  pivot_wider(
-    names_from = topic,
-    values_from = gamma,
-    names_prefix = "tGamma",
-    values_fill = 0
-    ) %>% 
-
-  arrange(-tGamma1) %>% 
-  filter(str_detect(text, "탄소")) %>% 
-  mutate(text = str_replace_all(text, "탄소, "**탄소**")) %>% 
-  head(30)
-```
 
 ## 공변인 분석 시각화 
 
